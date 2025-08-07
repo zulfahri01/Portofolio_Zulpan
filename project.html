@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZULPAN - Sistem Informasi Barang Inventaris</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar hiding for the hamburger icon on the navbar */
+    /* For smooth transition on nav open/close */
+    .nav-links {
+      transition: max-height 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-gray-900 select-none">
+
+    <!-- Navbar -->
+  <header class="bg-gray-900 text-white sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="primary navigation">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center font-bold text-xl tracking-wider">
+            <span>ZUL</span><span class="text-yellow-500">PAN</span>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex md:items-center md:space-x-8">
+          <a href="#home" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Home</a>
+          <a href="#about" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">About</a>
+          <a href="#service" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Service</a>
+          <a href="#project" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Project</a>
+        </div>
+
+        <!-- Contact Button for Desktop -->
+        <div class="hidden md:block">
+          <a href="#contact" class="bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="text-gray-200 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded p-2">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu, hidden initially -->
+      <div id="mobile-menu" class="md:hidden max-w-md mx-auto px-4 pb-4 hidden">
+        <a href="#home" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Home</a>
+        <a href="#about" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">About</a>
+        <a href="#service" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Service</a>
+        <a href="#project" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Project</a>
+        <a href="#contact" class="mt-3 block text-center bg-yellow-500 text-gray-900 font-semibold py-2 rounded-full hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          Contact
+        </a>
+      </div>
+    </nav>
+  </header>
+
+<script>
+  // Mobile menu toggle logic
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  menuButton.addEventListener("click", () => {
+    const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu.classList.toggle("hidden");
+    menuIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+</script>
+
+  <!-- Main Content container -->
+  <main class="max-w-7xl mx-auto px-4 md:px-8 py-10">
+
+    <h1 class="text-center font-semibold text-lg md:text-xl mb-6 max-w-3xl mx-auto px-4 leading-snug">
+      Rancang Bangun Sistem Informasi Barang Inventaris Berbasis Web di Kecamatan Tamansari Kota Tasikmalaya
+    </h1>
+    <div class="w-24 h-0.5 bg-yellow-500 mx-auto mb-10 rounded"></div>
+
+    <!-- Grid container for sections (2 columns on md and above, 1 column on smaller) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+      <!-- Section Template -->
+      <!-- We will repeat this section with different titles -->
+      <!-- 1 -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">1. Tampilan Login</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7782a214-ec5d-4e65-a582-96d235cfc4a9.png"
+            alt="A bright workspace with laptop showing login screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a421e26f-6207-46f7-ab10-b555e3c83bde.png';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">2. Tampilan Dashboard</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6a2634d6-a939-4d57-ad7a-7fbad515d40a.png"
+            alt="A bright workspace with laptop showing dashboard screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">3. Tampilan Data Barang</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a1c96584-657e-4d09-a220-6a870e2ab57d.png"
+            alt="Workspace with laptop showing data barang screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">4. Tampilan Form Data Barang</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4887408a-be02-4d8e-ab7f-5fe081a6351d.png"
+            alt="Workspace with laptop showing form data barang screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">5. Tampilan Data Supplier</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4c8cfbe3-afde-4004-a7ac-8c6519e7d25e.png"
+            alt="Workspace with laptop showing data supplier screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">6. Tampilan Data FAktur</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/932b9434-f943-4737-801d-2b471c11521a.png"
+            alt="Workspace with laptop showing data faktur screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 9 first -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">9. Tampilan Data Laporan</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5ca61204-a680-4218-a8e8-0e0df9e23ea1.png"
+            alt="Workspace with laptop showing data laporan screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+      <!-- 9 second -->
+      <section>
+        <h2 class="mb-3 font-semibold text-gray-900 text-base md:text-base">9. Tampilan Registrasi</h2>
+        <div class="bg-yellow-400 rounded-xl p-5 shadow-sm">
+          <img 
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1a73cce8-7a9e-46d7-ab19-50dfb6cc5ccc.png"
+            alt="Workspace with laptop showing registration screen, documents, calculator and coffee cup on wooden table"
+            class="rounded-lg object-cover w-full h-56 md:h-48 mb-4"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x350?text=Image+Unavailable';"
+          />
+          <p class="text-xs md:text-sm text-gray-900 leading-relaxed font-semibold">
+            Pada halaman ini berfungsi untuk admin di saat login. Pada halaman login ini admin memasukan Username dan Password. Jika memasukan Username dan Password yang salah maka tampilan halaman login ini akan kembali seperti semula dan terdapat keterangan bahwa “Login anda gagal, username dan password tidak valid. Silahkan hubungi admin”.
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 px-6 sm:px-12 border-t border-gray-700 rounded-t-[40px] select-none">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Left footer -->
+      <div>
+        <h2 class="font-bold text-2xl mb-5 select-text">
+          ZUL<span class="text-yellow-600">PAN</span>
+        </h2>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#home" class="hover:text-yellow-600 transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-600 transition">About Me</a></li>
+          <li><a href="#services" class="hover:text-yellow-600 transition">Services</a></li>
+          <li><a href="#projects" class="hover:text-yellow-600 transition">Project</a></li>
+        </ul>
+      </div>
+
+      <!-- Middle footer -->
+      <div>
+        <h3 class="font-semibold text-lg mb-5">FOLLOW MORE :</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="https://www.linkedin.com/in/zulpanfahrijal/" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.867 0-2.154 1.459-2.154 2.967v5.7h-3v-11h2.879v1.5h.041c.401-.758 1.379-1.556 2.838-1.556 3.034 0 3.596 1.996 3.596 4.59v6.466z"/></svg>
+            Linkedin
+          </a></li>
+          <li><a href="https://wa.me/6287762135519" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 10.79l-5.14-1.97 3.77-4.65-5 4.98-1-2.43-3.29 10.58 2.85-2.45 3.92 2.14c.4.22.86-.1.78-.54l-.75-4.36z"/></svg>
+            Whatsapp
+          </a></li>
+          <li><a href="https://www.facebook.com/julpandt/" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  class="w-5 h-5" aria-hidden="true"><path d="M9.37 15.35v-5.6l6.27 2.8-6.27 2.8zm.79-7.2c-2.59 0-4.69 2.08-4.69 4.65 0 2.58 2.1 4.65 4.69 4.65 2.61 0 4.7-2.07 4.7-4.65 0-2.57-2.1-4.65-4.7-4.65z"/><path d="M21.65 9.11c-2.07-3.21-6.37-4.76-10.53-3.67-4.15 1.1-7.27 4.92-7.27 9.31 0 4.37 3.11 8.17 7.24 9.28 4.21 1.13 8.46-.44 10.48-3.64.21-.33.05-.76-.32-.88-.36-.11-.76.06-.91.4a7.698 7.698 0 01-9.98 3.27c-2.85-1.03-4.65-3.87-4.65-6.81 0-3.77 3.74-7.15 7.59-7.15 1.59 0 3.01.54 4.14 1.49.31.27.84.23 1.12-.11.26-.3.24-.78-.06-1.05z"/></svg>
+            Facebook
+          </a></li>
+          <li><a href="zulpanfahrijal@gmail.com" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.94 6.28a.75.75 0 00-.69.98c.014.046.033.087.056.126l6.1 10.64c.29.508.974.712 1.484.42a1.11 1.11 0 00.18-.13 1.498 1.498 0 00.34-.41l6.09-10.63a.75.75 0 00-1.275-.79L10 14.8 4.22 6.28a.75.75 0 00-.69-.005zM18 5.25V13a.75.75 0 01-1.5 0V5.25A2.75 2.75 0 0013.75 2.5h-7.5A2.75 2.75 0 003.5 5.25v7.75a2.75 2.75 0 002.75 2.75H18a.75.75 0 000-1.5H6.5a1.25 1.25 0 01-1.25-1.25V5.25a1.25 1.25 0 011.25-1.25h7.5A1.25 1.25 0 0116.5 5.25z"/></svg>
+            Email
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Right footer -->
+      <address class="not-italic text-gray-400">
+        <h3 class="font-semibold mb-2">Our Home</h3>
+        <p>Tasikmalaya<br />Jawa Barat, Indonesia<br />Kode Pos : 46196</p>
+      </address>
+
+    </div>
+    <p class="text-center mt-10 text-yellow-600 font-semibold select-text">© 2025 By Zulpan Fahrijal</p>
+  </footer>
+
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  menuBtn.addEventListener('click', () => {
+    const isHidden = menu.classList.contains('hidden');
+    if (isHidden) {
+      menu.classList.remove('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      menu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+</body>
+</html>
