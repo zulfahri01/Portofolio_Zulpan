@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zulpan Fahrijal Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Custom scrollbar for dark sections (optional) */
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+    body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    body::-webkit-scrollbar-thumb {
+      background-color: #c59d5f;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-gray-900">
+
+ <!-- Navbar -->
+  <header class="bg-gray-900 text-white sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="primary navigation">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center font-bold text-xl tracking-wider">
+            <span>ZUL</span><span class="text-yellow-500">PAN</span>
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex md:items-center md:space-x-8">
+          <a href="#home" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Home</a>
+          <a href="#edu" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Education</a>
+          <a href="#skill" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Skill</a>
+          <a href="#work" class="text-sm font-medium hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded">Work</a>
+        </div>
+
+        <!-- Contact Button for Desktop -->
+        <div class="hidden md:block">
+          <a href="index.html #contact" class="bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" class="text-gray-200 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 rounded p-2">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu, hidden initially -->
+      <div id="mobile-menu" class="md:hidden max-w-md mx-auto px-4 pb-4 hidden">
+        <a href="#home" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Home</a>
+        <a href="#edu" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Education</a>
+        <a href="#skill" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Skill</a>
+        <a href="#work" class="block py-3 px-2 rounded hover:bg-yellow-500 hover:text-gray-900 font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400">Work</a>
+        <a href="#contact" class=" md:hidden mt-3 block text-center bg-yellow-500 text-gray-900 font-semibold py-2 rounded-full hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+          Contact 
+        </a>
+      </div>
+    </nav>
+  </header>
+
+
+<script>
+  // Mobile menu toggle logic
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  menuButton.addEventListener("click", () => {
+    const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isExpanded));
+    mobileMenu.classList.toggle("hidden");
+    menuIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+</script>
+
+  
+
+  <main class="pt-20 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 select-text" id="home">
+
+    <!-- Hero Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 items-center gap-10 min-h-[450px]">
+      <div class="space-y-6 max-w-xl">
+        <h3 class="text-2xl md:text-3xl font-semibold">HELLO THERE <span aria-label="Waving Hand" role="img">👋</span></h3>
+        <h1 class="text-4xl md:text-5xl font-extrabold">
+          I’m Zulpan <span class="text-yellow-600">Fahrijal</span>
+        </h1>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
+          Lulusan D3 Komputerisasi Akuntansi dari Politeknik Triguna yang memiliki ketertarikan di bidang Web Design dan pengelolaan data. Pernah melakukan magang di Kantor Kecamatan Tamansari, Kota Tasikmalaya, di mana saya belajar langsung mengenai pengarsipan, entry data, dan pelayanan masyarakat, dan saya juga berpengalaman sebagai admin akulaku, digital marketing, waiters dan pramuniaga.
+        </p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <a href="#edu" class="rounded px-5 py-2.5 bg-yellow-600 hover:bg-yellow-500 text-white font-semibold flex items-center gap-2 shadow-sm transition">
+            See More
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="index.html #contact" class="rounded border border-yellow-600 hover:bg-yellow-50 text-yellow-900 font-semibold text-sm py-2.5 px-5 flex items-center gap-2 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 12h.01M12 12h.01M8 12h.01M21 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8z" />
+            </svg>
+            Work With Me
+          </a>
+        </div>
+      </div>
+      <div class="relative w-full max-w-sm mx-auto md:mx-0">
+        <div class="overflow-hidden rounded-[100px_30px_100px_30px] border-4 border-yellow-600 max-w-[340px] mx-auto">
+          <img src="img/zulpan.jpg" 
+            alt="Portrait of a young man wearing a dark jacket, holding a phone in an urban evening setting with warm lighting" 
+            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0310a09d-44ea-4ddc-bc9b-f168803c2826.png';" 
+            class="w-full object-cover aspect-[5/6]" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="edu" class="bg-gray-900 text-gray-300 py-16 mt-24 px-6 sm:px-12 rounded-t-[40px]">
+      <h2 class="text-xl sm:text-2xl font-semibold max-w-xl mx-auto text-center mb-12 border-b border-yellow-600 pb-2 w-fit">Education</h2>
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center sm:items-start gap-10 sm:gap-20 px-4 sm:px-0">
+        <div class="rounded-xl shadow-xl overflow-hidden flex-shrink-0 w-48 h-48 sm:w-60 sm:h-60 bg-yellow-600">
+          <img src="img/zulfahri.png" 
+            alt="Formal portrait of a young man with neat hairstyle wearing a light blue blazer, white shirt, and black tie, against a solid mustard-orange background" 
+            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0b761a9e-8026-4557-acd0-078df979888e.png';" 
+            class="object-cover w-full h-full" />
+        </div>
+        <div class="flex-1 space-y-4 text-sm sm:text-base max-w-xl">
+          <div class="inline-block border-b border-yellow-600 pb-1 text-yellow-600 font-bold">Politeknik Triguna Tasikmalaya</div>
+          <div class="inline-block text-gray-400 italic border-b pb-0.5 border-gray-600">2021-2024</div>
+          <div class="font-semibold text-gray-200 text-lg mt-1.5 border-b border-gray-700 pb-1 max-w-max">Komputerisasi Akuntansi</div>
+          <p class="leading-relaxed pt-2 text-gray-300">
+            Ipk : <span class="font-semibold">3.22</span><br />
+            Mata Pelajaran Relevan : Web Design , Pemrograman Dasar, Pemrograman Andorid, Database mysql
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill Section -->
+    <section id="skill" class="max-w-7xl mx-auto px-6 sm:px-12 mt-24 mb-32">
+      <h2 class="text-center text-xl sm:text-2xl font-semibold border-b border-yellow-600 pb-2 w-fit mx-auto mb-12">My Skill</h2>
+      <div class="bg-gray-900 text-gray-300 rounded-[70px_24px_67px_160px] shadow-xl p-10 sm:p-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- Left side: Technical Skill + Interest -->
+        <div class="space-y-12">
+
+          <div>
+            <h3 class="font-semibold underline underline-offset-4 mb-6">Technical Skill</h3>
+            <div class="flex gap-6 items-center">
+              <img src="img/figma.webp" alt="Figma app logo in colors black, pink, purple and blue" 
+                class="w-12 h-12 object-contain rounded-md bg-white p-1" />
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c5065ca4-f4a9-41ee-a94e-d2a12aed3f81.png" alt="Canva app logo in white text on a teal circular background" 
+                class="w-12 h-12 object-contain rounded-md bg-white p-1" />
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e615d7b9-e102-4811-8758-e6b440dd2ffd.png" alt="Adobe Photoshop app logo dark blue square with 'Ps' white letters" 
+                class="w-12 h-12 object-contain rounded-md bg-white p-1" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold underline underline-offset-4 mb-6">Interest</h3>
+            <div class="flex flex-wrap gap-x-6 gap-y-3 text-white font-semibold text-lg">
+              <div class="border-r border-yellow-600 pr-4">Web Design</div>
+              <div>Technology</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right side: Soft skill, Skill Set, Languages -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-12">
+
+          <div>
+            <h4 class="italic font-semibold underline underline-offset-4 mb-4">Soft skill</h4>
+            <ul class="grid grid-cols-2 gap-x-6 gap-y-1 text-sm text-gray-300">
+              <li>Teamwork</li>
+              <li>Time Management</li>
+              <li>Confident</li>
+              <li>Creative</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="italic font-semibold underline underline-offset-4 mb-4">Skill Set</h4>
+            <ul class="text-sm text-gray-300 space-y-1">
+              <li>User Roasarch</li>
+              <li>Wireframers</li>
+              <li>SEO</li>
+              <li>Html</li>
+              <li>Web Design</li>
+              <li>Database</li>
+            </ul>
+          </div>
+
+          <div class="sm:col-span-2 pt-6 sm:pt-0">
+            <h4 class="italic font-semibold underline underline-offset-4 mb-4">Languages</h4>
+            <ul class="text-sm text-gray-300 space-y-2 max-w-xs">
+              <li class="flex justify-between">
+                <span>Bahasa Indonesia</span>
+                <span class="text-yellow-600 font-semibold">Fluent</span>
+              </li>
+              <li class="flex justify-between">
+                <span>English</span>
+                <span class="text-gray-500 font-semibold">Basic</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work" class="max-w-7xl mx-auto px-6 sm:px-12 mb-28">
+      <h2 class="text-center text-xl sm:text-2xl font-semibold border-b border-yellow-600 pb-2 w-fit mx-auto mb-12">Work Experience</h2>
+
+      <div class="flex flex-col md:flex-row gap-8 md:gap-10 max-w-6xl mx-auto">
+
+        <!-- Alca Studio -->
+        <article class="flex-1 p-5 border border-gray-300 rounded-md shadow-sm min-w-[260px]" aria-label="Work experience at Alca Studio from April 2024 to February 2025">
+          <header class="flex justify-between items-baseline mb-3">
+            <h3 class="font-semibold text-gray-900">Alca Studio</h3>
+            <time class="text-sm text-gray-500 italic">April 2024–Feb 2025</time>
+          </header>
+          <p class="font-semibold mb-2">Digital Marketing</p>
+          <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+            <li>Berhasil mencapai target setiap bulannya.</li>
+            <li>Melakukan upload produk sebanyak 30 toko dengan menggunakan tools yang disediakan.</li>
+            <li>Mengurus toko seperti membalas chat dan pengecekan produk sebanyak 30 toko.</li>
+            <li>Melakukan perubahan sebelum upload produk dengan microsoft excel.</li>
+          </ul>
+        </article>
+
+        <!-- Kec Tamansari -->
+        <article class="flex-1 p-5 border border-gray-300 rounded-md shadow-sm min-w-[260px]" aria-label="Work experience as Staff Admin Internship at Kec Tamansari from April 2024 to February 2025">
+          <header class="flex justify-between items-baseline mb-3">
+            <h3 class="font-semibold text-gray-900">Kec Tamansari</h3>
+            <time class="text-sm text-gray-500 italic">Feb 2024–March 2024</time>
+          </header>
+          <p class="font-semibold mb-2 inline-flex items-center gap-1">
+            Staff Admin <span class="italic ml-1 text-gray-600">( Internship )</span>
+          </p>
+          <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+            <li>Membantu pengarsipan dokumen kependudukan dan surat menyurat.</li>
+            <li>Entry data dalam sistem administrasi.</li>
+            <li>Melayani masyarakat dalam proses administrasi.</li>
+            <li>Mendukung kegiatan operasional kantor secara umum.</li>
+          </ul>
+        </article>
+
+        <!-- Pusat Laptop Nusantara -->
+        <article class="flex-1 p-5 border border-gray-300 rounded-md shadow-sm min-w-[260px]" aria-label="Work experience at Pusat Laptop Nusantara from September 2020 to September 2021">
+          <header class="flex justify-between items-baseline mb-3">
+            <h3 class="font-semibold text-gray-900">Pusat Laptop Nusantara</h3>
+            <time class="text-sm text-gray-500 italic">Sep 2020 – Sep 2021</time>
+          </header>
+          <p class="font-semibold mb-2">Digital Marketing</p>
+          <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+            <li>Menjual barang di marketplace Facebook, Instagram.</li>
+            <li>Mencapai target susai yang diinginkan.</li>
+            <li>Melakukan instalasi windows atau aplikasi sesuai kebutuhan konsumen.</li>
+            <li>Memastikan barang layak jual dan tidak cacad.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 px-6 sm:px-12 border-t border-gray-700 rounded-t-[40px] select-none">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Left footer -->
+      <div>
+        <h2 class="font-bold text-2xl mb-5 select-text">
+          ZUL<span class="text-yellow-600">PAN</span>
+        </h2>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#home" class="hover:text-yellow-600 transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-600 transition">About Me</a></li>
+          <li><a href="#services" class="hover:text-yellow-600 transition">Services</a></li>
+          <li><a href="#projects" class="hover:text-yellow-600 transition">Project</a></li>
+        </ul>
+      </div>
+
+      <!-- Middle footer -->
+      <div>
+        <h3 class="font-semibold text-lg mb-5">FOLLOW MORE :</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="https://www.linkedin.com/in/zulpanfahrijal/" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.867 0-2.154 1.459-2.154 2.967v5.7h-3v-11h2.879v1.5h.041c.401-.758 1.379-1.556 2.838-1.556 3.034 0 3.596 1.996 3.596 4.59v6.466z"/></svg>
+            Linkedin
+          </a></li>
+          <li><a href="https://wa.me/6287762135519" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 10.79l-5.14-1.97 3.77-4.65-5 4.98-1-2.43-3.29 10.58 2.85-2.45 3.92 2.14c.4.22.86-.1.78-.54l-.75-4.36z"/></svg>
+            Whatsapp
+          </a></li>
+          <li><a href="https://www.facebook.com/julpandt/" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  class="w-5 h-5" aria-hidden="true"><path d="M9.37 15.35v-5.6l6.27 2.8-6.27 2.8zm.79-7.2c-2.59 0-4.69 2.08-4.69 4.65 0 2.58 2.1 4.65 4.69 4.65 2.61 0 4.7-2.07 4.7-4.65 0-2.57-2.1-4.65-4.7-4.65z"/><path d="M21.65 9.11c-2.07-3.21-6.37-4.76-10.53-3.67-4.15 1.1-7.27 4.92-7.27 9.31 0 4.37 3.11 8.17 7.24 9.28 4.21 1.13 8.46-.44 10.48-3.64.21-.33.05-.76-.32-.88-.36-.11-.76.06-.91.4a7.698 7.698 0 01-9.98 3.27c-2.85-1.03-4.65-3.87-4.65-6.81 0-3.77 3.74-7.15 7.59-7.15 1.59 0 3.01.54 4.14 1.49.31.27.84.23 1.12-.11.26-.3.24-.78-.06-1.05z"/></svg>
+            Facebook
+          </a></li>
+          <li><a href="zulpanfahrijal@gmail.com" class="flex items-center gap-2 hover:text-yellow-600 transition">
+            <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.94 6.28a.75.75 0 00-.69.98c.014.046.033.087.056.126l6.1 10.64c.29.508.974.712 1.484.42a1.11 1.11 0 00.18-.13 1.498 1.498 0 00.34-.41l6.09-10.63a.75.75 0 00-1.275-.79L10 14.8 4.22 6.28a.75.75 0 00-.69-.005zM18 5.25V13a.75.75 0 01-1.5 0V5.25A2.75 2.75 0 0013.75 2.5h-7.5A2.75 2.75 0 003.5 5.25v7.75a2.75 2.75 0 002.75 2.75H18a.75.75 0 000-1.5H6.5a1.25 1.25 0 01-1.25-1.25V5.25a1.25 1.25 0 011.25-1.25h7.5A1.25 1.25 0 0116.5 5.25z"/></svg>
+            Email
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Right footer -->
+      <address class="not-italic text-gray-400">
+        <h3 class="font-semibold mb-2">Our Home</h3>
+        <p>Tasikmalaya<br />Jawa Barat, Indonesia<br />Kode Pos : 46196</p>
+      </address>
+
+    </div>
+    <p class="text-center mt-10 text-yellow-600 font-semibold select-text">© 2025 By Zulpan Fahrijal</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
+
